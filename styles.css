@@ -1,0 +1,1181 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #eaf4fc;
+}
+
+
+button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    text-align: center;
+    background-color: #2d2d2d;
+}
+
+.button:hover {
+    background-color: #555;
+}
+
+button:disabled {
+    background-color: gray;
+    cursor: not-allowed;
+}
+
+.oculto {
+    display: none;
+}
+
+
+
+/* Estilos de cada momento con su respectiva imagen de fondo */
+#momento1, #momento2, #momento3 {
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    min-height: 100vh;
+}
+
+#momento1 { background-image: url('Anfiteatro_12.jpeg'); }
+#momento3 { background-image: url('Anfiteatro_15.jpeg'); }
+
+/* Estilos específicos del Primer Momento */
+#momento1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+}
+
+.contenedor-principal {
+    width: 68%;
+    max-width: 575px;
+    background: white url('Escudo Unicauca.png') no-repeat center center;
+    background-size: 68% auto; /* Cambiado de 70% a 95% para ocupar casi todo el espacio */
+    background-blend-mode: soft-light; /* Cambiado a soft-light para mejor integración */
+    position: relative;
+    color: #333;
+    padding: 25px;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+}
+
+/* Pseudo-elemento para control de opacidad */
+.contenedor-principal::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: inherit;
+    background-size: 68% auto; /* Actualizado para coincidir con el cambio anterior */
+    background-position: center center;
+    opacity: 0.21; /* Ajustado a un valor más bajo para integrarse mejor con el fondo */
+    z-index: 0;
+    border-radius: inherit;
+}
+
+/* El resto del código permanece igual */
+.contenedor-principal > * {
+    position: relative;
+    z-index: 1;
+}
+
+h1 {
+    color: #0622c0;
+    font-size: 21px;    /* Reducido de 25px a 20px */
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 18px;
+    line-height: 1.4;
+    -webkit-text-stroke: 0.3px #0e546d; /* Delineado fino en azul verdoso oscuro */
+}
+
+.descripcion-texto {
+    font-size: 16px;
+    text-align: justify;
+    font-weight: bold;
+    line-height: 1.4;    /* Reducido ligeramente de 1.5 a 1.4 */
+    color: #036e30;
+    margin-bottom: 20px;
+    max-width: 95%;      /* Aumentado de 90% a 95% para usar más espacio horizontal */
+    text-shadow: 1px 1px 1px rgba(20, 124, 158, 0.3);
+    padding: 5px 0;      /* Ajustado para tener padding solo arriba y abajo, no a los lados */
+    letter-spacing: 0.1px; /* Reducido para que ocupe menos espacio horizontal */
+}
+
+/* Botón de acceso con Google */
+.google-login-btn {
+    background-color: #4cf07d;
+    color: #333;
+    font-size: 14px;    /* Reducido de 16px a 14px */
+    font-weight: bold;
+    padding: 10px;      /* Reducido de 12px a 10px */
+    width: 280px;       /* Reducido de 350px a 280px */
+    border: 2px solid #032a44;
+    border-radius: 6px; /* Reducido de 8px a 6px */
+    cursor: pointer;
+    margin-bottom: 20px; /* Reducido de 25px a 20px */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo para el icono de Google */
+.google-login-btn::before {
+    content: "";
+    display: inline-block;
+    width: 20px;       /* Reducido de 24px a 20px */
+    height: 20px;      /* Reducido de 24px a 20px */
+    border-radius: 50%;
+    margin-right: 8px; /* Reducido de 10px a 8px */
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path fill="%234285F4" d="M45.12 24.5c0-1.56-.14-3.06-.4-4.5H24v8.51h11.84c-.51 2.75-2.06 5.08-4.39 6.64v5.52h7.11c4.16-3.83 6.56-9.47 6.56-16.17z"/><path fill="%2334A853" d="M24 46c5.94 0 10.92-1.97 14.56-5.33l-7.11-5.52c-1.97 1.32-4.49 2.1-7.45 2.1-5.73 0-10.58-3.87-12.31-9.07H4.34v5.7C7.96 41.07 15.4 46 24 46z"/><path fill="%23FBBC05" d="M11.69 28.18C11.25 26.86 11 25.45 11 24s.25-2.86.69-4.18v-5.7H4.34C2.85 17.09 2 20.45 2 24c0 3.55.85 6.91 2.34 9.88l7.35-5.7z"/><path fill="%23EA4335" d="M24 10.75c3.23 0 6.13 1.11 8.41 3.29l6.31-6.31C34.91 4.18 29.93 2 24 2 15.4 2 7.96 6.93 4.34 14.12l7.35 5.7c1.73-5.2 6.58-9.07 12.31-9.07z"/></svg>');
+    background-size: contain;
+}
+
+.google-login-btn:hover {
+    background-color: #a8dadc;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilos para las etiquetas */
+label {
+    width: 280px;       /* Reducido de 350px a 280px */
+    text-align: left;
+    margin-bottom: 6px; /* Reducido de 8px a 6px */
+    color: #333232;
+    font-weight: bold;
+    display: block;
+    font-size: 14px;    /* Añadido tamaño de fuente */
+}
+
+/* Estilos para los campos de entrada */
+input[type="text"],
+input[type="password"] {
+    background-color: #4cf07d;
+    color: #333;
+    width: 280px;       /* Reducido de 350px a 280px */
+    padding: 10px;      /* Reducido de 12px a 10px */
+    margin-bottom: 16px; /* Reducido de 20px a 16px */
+    border: 2px solid #032a44;
+    border-radius: 6px; /* Reducido de 8px a 6px */
+    font-size: 14px;    /* Reducido de 16px a 14px */
+    box-sizing: border-box;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus {
+    border-color: #1a5276;
+    outline: none;
+    box-shadow: 0 0 5px rgba(26, 82, 118, 0.3);
+}
+
+/* Contenedor del campo de contraseña con el icono de ojo */
+.password-container {
+    position: relative;
+    width: 280px;       /* Reducido de 350px a 280px */
+    margin-bottom: 20px; /* Reducido de 25px a 20px */
+}
+
+.password-container input {
+    width: 100%;
+    padding-right: 35px; /* Espacio para el icono, reducido de 40px a 35px */
+    margin-bottom: 0;
+}
+
+/* Ícono de ojo para mostrar/ocultar contraseña */
+.toggle-password {
+    position: absolute;
+    right: 12px;       /* Reducido de 15px a 12px */
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    font-size: 16px;   /* Reducido de 18px a 16px */
+    color: #777;
+    z-index: 10;
+}
+
+.toggle-password:hover {
+    color: #1a5276;
+}
+
+/* Placeholder con mejor visibilidad */
+input::placeholder {
+    color: #1a2c2c;
+    opacity: 0.8;
+    font-size: 13px;   /* Añadido tamaño de fuente reducido */
+}
+
+/* Estilos para el botón de ingresar */
+.boton-ingresar {
+    background-color: #091f9b;
+    color: white;
+    padding: 10px 0;   /* Reducido de 12px a 10px */
+    font-size: 14px;   /* Reducido de 16px a 14px */
+    font-weight: bold;
+    border: 2px solid #1a2c2c ;
+    border-radius: 6px; /* Reducido de 8px a 6px */
+    cursor: pointer;
+    transition: background 0.3s ease;
+    width: 280px;      /* Reducido de 350px a 280px */
+    margin-top: 5px;
+}
+
+.boton-ingresar:hover {
+    background-color: #154360;
+}
+
+
+/* Estilos para el botón del manual */
+.manual-container {
+    position: absolute;
+    bottom: 55px;
+    right: 407px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 10;
+}
+
+.manual-title {
+    font-size: 14px;
+    font-weight: bold;
+    color: rgb(5, 16, 77);
+    margin-bottom: -2px;
+    text-align: center;
+}
+
+.manual-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.manual-btn:hover {
+    background-color: rgba(72, 209, 204, 0.1);
+    transform: scale(1.05);
+}
+
+.manual-icon {
+    width: 50px;
+    height: 50px;
+    transition: all 0.3s ease;
+}
+
+/* Colores del icono - Estado inicial: verde azulado */
+.manual-icon .icon-bg {
+    fill: #1da37b; /* Verde azulado */
+    transition: fill 0.3s ease;
+}
+
+.manual-icon .icon-spine {
+    fill: #1d746e; /* Tono más oscuro para el lomo */
+    transition: fill 0.3s ease;
+}
+
+.manual-icon .icon-gear {
+    fill: #ffffff; /* Blanco para el engranaje */
+    stroke: #0d686e;
+    stroke-width: 2;
+    transition: all 0.3s ease;
+}
+
+.manual-icon .icon-lines {
+    stroke: #177e77;
+    stroke-width: 2;
+    transition: stroke 0.3s ease;
+}
+
+/* Hover effect - cambio a azul aguamarina */
+.manual-btn:hover .manual-icon .icon-bg {
+    fill: #259ebd; /* Azul aguamarina */
+}
+
+.manual-btn:hover .manual-icon .icon-spine {
+    fill: #093b47;
+}
+
+.manual-btn:hover .manual-icon .icon-gear {
+    stroke: #0b3a4d;
+}
+
+.manual-btn:hover .manual-icon .icon-lines {
+    stroke: #0c385c;
+}
+
+
+
+/* Estilos específicos del Segundo Momento *//* Estilos específicos del Segundo Momento */
+#momento2 {
+    background-image: url('Anfiteatro.png');
+    width: 1365px;
+    height: 638px;
+    padding: 0;
+    margin: 0;
+    position: relative;
+    font-family: Arial, sans-serif;
+    overflow: hidden;
+}
+
+.mensaje-principal {
+    background-color: #0f7777;
+    color: white;
+    border: 2px solid rgb(14, 12, 12);
+    border-radius: 10px;
+    padding: 15px;
+    text-align: center;
+    font-weight: bold;
+    width: 90%;
+    margin: 10px auto 20px auto;
+    max-width: 1000px;
+    margin-bottom: 17px;
+    margin-top: 0px;
+}
+
+/* Ajuste para el contenedor principal del anfiteatro */
+.anfiteatro-container {
+    position: relative;
+    width: 90%; /* Reducido de 95% */
+    height: 500px; /* Reducido para asegurar que sea visible */
+    border: 3px solid rgb(12, 1, 1);
+    margin: 5px auto; /* Margen mínimo para estar cerca del título */
+    padding: 5px; /* Padding mínimo */
+    box-sizing: border-box;
+    overflow: visible; /* Para asegurar que los elementos que sobresalen sean visibles */
+}
+/* Estilos para los detectores */
+.detector-btn {
+    position: absolute;
+    background-color: #10847f;
+    color: white;
+    width: 121px;
+    height: 52px;
+    border: 2px solid #012330;
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3px;
+    transition: background-color 0.4s ease;
+}
+
+.detector-btn:hover {
+    background-color: #0e8bd3;
+}
+
+#dec-1 {
+    top: 193px;
+    right: 97px;
+}
+
+#dec-2 {
+    top: 47px;
+    right: 390px;
+}
+
+#dec-3 {
+    top: 47px;
+    left: 278px;
+}
+
+#dec-4 {
+    top: 170px;
+    left: 55px;
+}
+
+#dec-5 {
+    top: 270px;
+    left: 55px;
+}
+
+#dec-6 {
+    bottom: 46px;
+    left: 322px;
+}
+
+#dec-7 {
+    bottom: 46px;
+    left: 561px;
+}
+
+#dec-8 {
+    bottom: 46px;
+    right: 330px;
+}
+
+/* Estilos para las ubicaciones */
+.location-box {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    background-color: white;
+    border: 2px solid #4CAF50;
+    padding: 8px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 14px;
+    border-radius: 5px;
+    gap: 3px;
+}
+
+.location-icon {
+    width: 45px;
+    height: 45px;
+    min-width: 40px;
+    stroke: rgb(4, 65, 66); /* Color de línea negro */
+    stroke-width: 1.5;
+}
+
+#puerta-sala {
+    top: 35px;
+    left: 99px;
+    width: 146px;
+}
+
+#puerta-salon {
+    top: 35px;
+    left: 410px;
+    width: 122px;
+}
+
+#tablero {
+    top: 35px;
+    right: 530px;
+    width: 105px;
+}
+
+#lavamanos {
+    top: 35px;
+    right: 223px;
+    width: 130px;
+}
+
+#puerta-almacen {
+    top: 111px;
+    right: 87px;
+    width: 120px;
+    justify-content: space-between;
+}
+
+#puerta-almacen svg {
+    margin-left: 8px; /* Puedes ajustar este valor según necesites */
+    height: 50px;
+}
+
+#puerta-entrada {
+    bottom: 168px;
+    right: 87px;
+    width: 120px;
+}
+
+#puerta-entrada svg {
+    margin-left: 8px; /* Puedes ajustar este valor según necesites */
+    height: 50px;
+}
+
+#puerta-frio {
+    bottom: 89px;
+    right: 88px;
+    width: 116px;
+}
+
+/* Contenedor principal para mesas de estudio */
+.mesas-container {
+    position: absolute;
+    top: 123px; 
+    left: 160px;  
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+/* Columna vertical para las mesas */
+.mesas-column {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;  /* Espacio vertical entre mesas */
+    margin-left: 40px; /* Espacio para el título a la izquierda */
+}
+
+/* Estilos para mesas de estudio */
+.mesa-box {
+    background-color: white;
+    border: 2px solid black;
+    padding: 8px;
+    text-align: center;
+    width: 80px;
+    height: 25px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Estilos actualizados para el título de mesas */
+#mesas-titulo {
+    writing-mode: vertical-lr;
+    transform: rotate(180deg);
+    font-weight: bold;
+    text-align: center;
+    font-size: 14px;
+    height: 180px;
+    position: absolute;
+    left: 191px; /* Ajustado para moverlo hacia la izquierda */
+    color: rgb(3, 0, 0); /* Color del texto para que se vea sobre el fondo verde */
+    background-color: transparent; /* Para que se vea el fondo verde detrás */
+    z-index: 2; /* Para asegurar que esté por encima */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.area-title {
+    font-weight: bold;
+    font-size: 14px;
+}
+.cadaver-row {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 60px; /* Este es el espacio horizontal entre cajas */
+    margin: 20px 0;
+}
+
+.cadaver-box {
+    background-color: white;
+    border: 2px solid black;
+    width: 60px;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    font-weight: bold;
+    padding-top: 2px;
+}
+
+#primera-fila {
+    position: absolute;
+    top: 100px;
+    right: 270px;
+}
+
+#segunda-fila {
+    position: absolute;
+    top: 250px;
+    right: 270px;
+}
+
+#zona-trabajo {
+    position: absolute;
+    top: 240px;
+    left: 528px;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+/* Estilos para las sillas */
+.sillas-container {
+    position: absolute;
+    top: 396px;
+    left: 156px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100px;
+    gap: 15px;
+}
+
+.silla-svg {
+    width: 30px;
+    height: 35px;
+}
+
+#sillas-titulo {
+    position: absolute;
+    bottom: -2px;
+    left: -1px;
+    font-weight: bold;
+    width: 100%;
+    text-align: center;
+}
+
+/* Puedes mantener la clase .silla si la necesitas para otras partes de tu aplicación */
+.silla {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 2px solid black;
+    background-color: white;
+    display: none; /* Oculta los círculos originales */
+}
+
+/* Estilo para el botón de cerrar sesión */
+.boton-cerrar-sesion {
+    background-color: #06964e;
+    color: white;
+    padding: 8px 16px;
+    border: 2px solid rgb(49, 2, 2);
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    position: absolute;
+    bottom: 84px;
+    right: 182px;
+    transition: background-color 0.3s;
+}
+
+.boton-cerrar-sesion:hover {
+    background-color: #4CAF50;
+}
+
+
+.oculto {
+    display: none;
+}
+
+/* Estilos específicos del Tercer Momento */
+.detector {
+    background-color: #223c60;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+h3 {
+    color: rgb(3, 77, 189);
+    font-size: 22px;
+    font-weight: bold;
+    text-align: center;
+    padding: center;
+    margin-bottom: 0px; /* Reducido para acercar más los recuadros al título */
+    line-height: 1.3;
+    text-shadow: 
+        1px 1px 1px rgba(0, 0, 0, 0.8),
+        0 0 5px rgba(255, 215, 0, 0.5);
+    -webkit-text-stroke: 0.5px black;
+    letter-spacing: 1px;
+    padding: 4px 0;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.05), rgba(0,0,0,0.15));
+    border-radius: 4px;
+}
+
+
+.sensor-data {
+    display: flex;
+    justify-content: flex-start;
+    padding-left: 340px;
+    gap: 10px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    border-radius: 10px;
+    margin-bottom: 9px;
+    margin-top: 0px;
+    flex-wrap: wrap;
+    max-width: 95%;
+    margin-right: auto;
+    background-color: transparent;
+}
+
+
+/* Ajustes específicos para los recuadros de CO2 y Formol */
+.data-group:nth-child(1), /* CO2 */
+.data-group:nth-child(2) { /* Formol */
+    min-width: 150px; /* Aumentamos el ancho mínimo */
+}
+
+/* Selector específico solo para el texto "Concentración-Formol" */
+.data-group:nth-of-type(2) .label-box {
+  padding-left: 12px; /* Aumentamos el padding izquierdo para mover el texto hacia la derecha */
+}
+
+/* Selector específico solo para el texto "Concentración-Formol" */
+.data-group:nth-of-type(1) .label-box {
+  padding-left: 11px; /* Aumentamos el padding izquierdo para mover el texto hacia la derecha */
+}
+/* Ajustes para todos los recuadros de datos de sensores */
+.data-group {
+    display: flex;
+    flex-direction: column;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16);
+    min-width: 140px;
+    border: 1px solid white;
+    margin: 0 5px; /* Pequeño margen entre recuadros */
+}
+/* Ajustes para las cajas de etiquetas con mejor centrado */
+.label-box {
+    padding: 5px 8px;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    font-size: 14px;
+    width: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+    border-bottom: 1px solid white;
+    height: 30px;
+    box-sizing: border-box;
+    /* Aseguramos que el texto se centre correctamente */
+    text-align: center;
+}
+/* Ajustes para las cajas de valores */
+.value-box {
+    padding: 7px 8px 3.4px 8px;  /* Superior, Derecha, Inferior, Izquierda */
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    font-size: 18px;
+    width: 100%;
+    margin: 0;
+    border-top: none; /* Eliminamos el borde superior para evitar doble borde */
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding-left: 16px;   /* Mantenemos este valor específico */
+    gap: 5px;
+    box-sizing: border-box; /* Para que el padding no afecte el ancho */
+}
+
+
+/* Para asegurar que el primer elemento del grupo tenga esquinas redondeadas arriba */
+.data-group .label-box {
+    border-radius: 8px 8px 0 0;
+}
+
+/* Para asegurar que el último elemento del grupo tenga esquinas redondeadas abajo */
+.data-group .value-box {
+    border-radius: 0 0 8px 8px;
+}
+
+/* Selector específico para el value-box del recuadro de Formol */
+.data-group:nth-of-type(2) .value-box {
+  padding-left: 22px; /* Aumentamos de 14px a 16px (2px más) */
+}
+
+.co2-label, .formol-label {
+    justify-content: center;
+    padding-left: 0px;
+}
+
+/* Ajuste de valor y unidad */
+.value-box span {
+    margin-right: 2px;
+}
+
+
+.sensor-icon {
+    margin-right: 3px;
+      color: white;
+    filter: drop-shadow(0px 0px 1px rgba(255, 255, 255, 0.5));
+}
+
+.co2-label, .formol-label {
+    justify-content: center;
+    padding-left: 0px;
+}
+
+/* Colores específicos permanecen igual */
+.co2-label { 
+    background-color: #10847f;
+}
+.co2-value { 
+    background-color: #20a79f;
+}
+.formol-label { 
+    background-color: #10847f;
+}
+.formol-value { 
+    background-color: #20a79f;
+}
+.temperatura-label { 
+    background-color: #0c3d7e;
+}
+.temperatura-value { 
+    background-color: #1b68cc;
+}
+.humedad-label { 
+    background-color: #0c3d7e;
+}
+.humedad-value { 
+    background-color: #1b68cc;
+}
+
+.titulo {
+    text-align: center;
+    margin-bottom: 3px; /* Un poco más de espacio inferior */
+    color: rgb(2, 70, 47);
+    padding: 7px 14px; /* Padding interno para el recuadro */
+    background-color: rgba(235, 250, 247, 0.8); /* Fondo claro azul-verdoso */
+    display: inline-block; /* Para que el recuadro se ajuste al contenido */
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Sombra sutil */
+    border: 1.2px solid rgba(5, 119, 96, 0.8); /* Borde sutil */
+    width: auto; /* Ajustar al contenido */
+    max-width: 80%; /* Limitar el ancho máximo */
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 19px;
+    font-weight: bold;
+}
+
+h2.titulo {
+    /* Mantener los estilos específicos del título dentro del recuadro */
+    background-color: rgba(214, 248, 242, 0.8); ; /* Eliminar el gradiente anterior */
+    padding: 3px 14px; /* Ajustar padding */
+    margin-top: 0px; /* Espacio superior */
+}
+
+/* Contenedor para centrar el título con su recuadro */
+.titulo-container {
+    text-align: center;
+    margin-bottom: 3px; /* Espacio entre el título y los recuadros inferiores */
+    padding-top: 0px;
+}
+
+/* Estilo actualizado para la caja de nivel de formol con el color verde oscuro del texto */
+.nivel-formol-box {
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    padding: 10px 15px;
+    border-radius: 8px;
+    background-color: #f4fcfc;
+    border: 2px solid rgb(3, 48, 33); /* Cambiado para coincidir con el verde del texto "PERMITIDO" */
+    color: rgb(1, 39, 23);
+    box-shadow: 0px 2px 5px rgba(0,0,0,0.2);
+    min-width: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: flex;
+    left: -18px;
+    position: relative;
+}
+
+#nivelFormol {
+    margin-left: 6px; /* Espacio después de los dos puntos */
+}
+
+/* Animación de parpadeo para el icono */
+@keyframes blink {
+    0% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.3; transform: scale(1.15); }
+    100% { opacity: 1; transform: scale(1); }
+  }
+  
+  /* Clase que se aplicará temporalmente para activar el parpadeo */
+  .blink-animation {
+    animation: blink 0.7s ease-in-out;
+  }
+  
+
+/* Estilo para el icono de alarma */
+.alarma-icon {
+    width: 24px;
+    height: 24px;
+    margin-left: 7px;
+}
+
+/* Colores para los diferentes estados */
+.alarma-verde path {
+    fill: #4CAF50; /* Verde para PERMITIDO */
+    stroke: #2E7D32; /* Borde más oscuro para el contorno */
+}
+
+.alarma-azul path {
+    fill: #f0f321; /* Amarillo para RIESGOSO */
+    stroke: #cfcc10; /* Borde más oscuro para el contorno */
+}
+
+.alarma-rojo path {
+    fill: #d81c0e; /* Rojo para PELIGROSO */
+    stroke: #B71C1C; /* Borde más oscuro para el contorno */
+}
+
+.value {
+    font-size: 26px;
+    font-weight: bold;
+    display: block;
+    margin-top: 15px; /* Espacio adicional entre el título y el valor */
+    padding: 10px 15px;
+    border-radius: 8px;
+    background-color: rgba(0, 0, 0, 0.2);
+    margin-bottom: 5px; /* Espacio después del valor */
+}
+
+.graficas {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto auto;
+    gap: 6px; /* Reducido de 9px a 7px */
+    justify-content: center;
+    align-items: center;
+    margin: 8px auto; /* Reducido de 10px a 8px */
+    padding: 0;
+    max-width: 95%;
+    width: 95%;
+}
+
+.grafica-container {
+    background: white;
+    padding: 28px 8px 7px 8px; /* Reducido el padding inferior de 8px a 7px */
+    border-radius: 7px;
+    height: 200px;
+    position: relative;
+    margin-bottom: 1px; /* Eliminado el margin-bottom que era 2px */
+    width: 100%;
+    box-sizing: border-box;
+    justify-self: center;
+    overflow: hidden;
+}
+canvas {
+    width: 100% !important; /* Aseguramos que el canvas ocupe todo el ancho disponible */
+    height: 100% !important; /* Y también toda la altura */
+    max-width: 100%;
+    max-height: 195px; /* Ajusta según necesites */
+}
+
+/* Ajuste adicional para mejorar la distribución de las gráficas */
+@media screen and (min-width: 768px) {
+    .graficas {
+        grid-gap: 19px; /* Mayor espacio en pantallas más grandes */
+    }
+    
+    .grafica-container {
+        height: 220px; /* Un poco más altas en pantallas grandes */
+    }
+}
+
+.grafica-titulo {
+    display: block;
+    font-size: 13px;
+    font-weight: bold;
+    text-align: center;
+    position: absolute;
+    top: 6px;
+    bottom: 5px;
+    left: 0;
+    right: 0;
+    padding: 0 5px;
+    margin-bottom: 4px; /* Separación con la gráfica */
+}
+
+.boton {
+    background-color: #0d9249;
+    color: white;
+    padding: 10px 16px;
+    border: 2px solid #e6f5ec;
+    border-radius: 8px;
+    font-weight: bold;
+    box-shadow: 0px 2px 5px rgba(0,0,0,0.2);
+    cursor: pointer;
+    font-family: sans-serif;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+    height: 40px;
+   transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.boton:hover {
+    background-color:#32a575;
+    color: white; /* azul verdoso */
+}
+.icono-circulo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    transition: fill 0.3s ease;
+}
+.icono-guardar {
+    flex-shrink: 0;
+    transition: color 0.3s ease;
+}
+.icono-regresar {
+    width: 16px;
+    height: 16px;
+    fill: #147c43;
+    transition: fill 0.3s ease;
+}
+
+.boton:hover .icono-regresar {
+    fill: #0e7931; /* azul verdoso solo en el ícono */
+}.boton:hover .icono-circulo {
+    fill: #64d4c3; /* azul verdoso solo en el ícono */
+}
+.boton:hover .icono-guardar {
+    fill: #64d4c3; /* azul verdoso solo en el ícono */
+}
+
+/* Contenedor para los tres elementos alineados y centrados */
+.buttons-container {
+    display: flex;
+    justify-content: flex-start; /* Centra los elementos horizontalmente */
+    align-items: center;
+    gap: 170px; /* Espacio de 7px entre los elementos */
+    margin-top: 1px;
+    margin-bottom: 8px;
+    margin-left: auto;
+    margin-right:auto;
+    position: relative;
+    padding-left: 160px; /* Desplaza todo el contenedor hacia la izquierda */
+}
+/* Oculta la sección de botones original si es necesario */
+.botones {
+    display: none;
+}
+
+/* Estilos para las notificaciones evanescentes */
+.toast-notification {
+    position: fixed;
+    top: 50px; /* más abajo */
+    right: 42px; /* más a la izquierda */
+    background-color: #4cf07d;
+    color: #032942;
+    font-weight: bold;
+    border: 2px solid #032a44;
+    border-radius: 6px;
+    padding: 12px 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+
+.toast-notification.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.toast-notification.success {
+    background-color: #4cf07d;
+    color: #032a44;
+}
+
+.toast-notification.error {
+    background-color: #ff8c8c;
+    color: #800000;
+}
+
+/* Animación para desvanecimiento */
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    to {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+}
+
+.toast-notification.fade-out {
+    animation: fadeOut 0.5s ease forwards;
+}
+
+@media (max-width: 768px) {
+    #momento3 {
+        padding: 10px;
+    }
+
+    .titulo-container h2 {
+        font-size: 18px;
+    }
+
+    .sensor-data {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+    }
+
+    .data-group {
+        width: 90%;
+        max-width: 320px;
+        font-size: 16px;
+        text-align: center;
+    }
+
+    .value-box {
+        font-size: 18px;
+        padding: 6px;
+    }
+
+    .buttons-container {
+        flex-direction: column;
+        gap: 10px;
+        margin: 15px auto;
+        align-items: center;
+    }
+
+    .buttons-container .boton {
+        width: 90%;
+        max-width: 300px;
+    }
+
+    .nivel-formol-box {
+        font-size: 16px;
+        text-align: center;
+    }
+
+    .alarma-icon {
+        width: 20px;
+        height: 20px;
+    }
+
+    .graficas {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        width: 100%;
+        padding: 10px 0;
+    }
+
+    .grafica-container {
+        width: 95%;
+        height: auto;
+        padding: 14px 10px;
+    }
+
+    .grafica-titulo {
+        position: static;
+        margin-top: 5px;
+        font-size: 14px;
+    }
+
+    canvas {
+        width: 100% !important;
+        height: auto !important;
+    }
+}
